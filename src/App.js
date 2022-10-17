@@ -1,7 +1,5 @@
 import React, { useReducer, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import getInitialState from './state/GetInitialState';
 import Stopwatch from './components/Stopwatch';
@@ -31,27 +29,26 @@ function App() {
   return (
     !state.isWon ?
       <Container>
-        <Card style={{ width: '18rem' }}>
-          <Card.Title>
-            <ButtonStartRestart
-              startRestart={state.startRestart}
-              handleClickRestart={() => dispatch({ type: 'START_RESTART' })}
-            /></Card.Title>
+        <ButtonStartRestart
+          startRestart={state.startRestart}
+          handleClickRestart={() => dispatch({ type: 'START_RESTART' })}
+        />
+        <table className='style2'>
+          <tbody>
+            <tr>
+              <td>
+                Move: {state.moves}
+              </td>
+              <td>
+                <Stopwatch
+                  time={state.spentTime}
+                />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <Card>
           <Card.Body>
-            <table className='style2'>
-              <tbody>
-                <tr>
-                  <td>
-                    Move: {state.moves}
-                  </td>
-                  <td>
-                    <Stopwatch
-                      time={state.spentTime}
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
             <Board
               cells={state.cells}
               handleClick={(num) => () => dispatch({ type: 'MOVE_TILES', num })}

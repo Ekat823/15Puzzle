@@ -33,8 +33,7 @@ table.style1 {
 
 table.style1 td {
 	border: 0px solid black;
-	text-align: center;
-	font-size: 3rem;
+	align-items: center;
 	line-height: 1px;
 }
 
@@ -54,7 +53,6 @@ table.style2 td {
 	font-size: 5rem;
 	color: #321c10;
 	text-align: center;
-	line-height: 0.1px;
 }
 
 
