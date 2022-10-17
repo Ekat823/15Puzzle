@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Table = ({cells, handleClick}) => {
+const Board = ({cells, handleClick}) => {
 	
 	const tableWidth = 4;
 	const tableHeight = 4;
@@ -43,4 +43,4 @@ const Table = ({cells, handleClick}) => {
 	)
 }
 
-export default Table
+export default Board
